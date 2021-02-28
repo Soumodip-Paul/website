@@ -5,4 +5,5 @@ import { firebaseConfig } from "sign_in.js";
       window.location.replace("./");
   }
   else {
+    document.getElementById("go").innerHTML=user.displayName;
   }
