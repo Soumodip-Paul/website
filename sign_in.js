@@ -51,7 +51,7 @@
       // ...
       console.error(error);
     });
-  
+  }
 
   function signOut() {
     firebase.auth().signOut().then(() => {
