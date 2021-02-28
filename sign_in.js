@@ -16,6 +16,7 @@
   function onSignInButtonClick() {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
+        document.getElementById("auth").innerHTML = user.displayName;
         // User is signed in.
         signOut();
       } else {
@@ -40,7 +41,7 @@ firebase.auth()
     // The signed-in user info.
     var user = result.user;
     // ...
-    document.getElementById("auth").innerHTML = user.displayName;
+    
     
   }).catch((error) => {
     // Handle Errors here.
