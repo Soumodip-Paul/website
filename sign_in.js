@@ -29,8 +29,9 @@
       
     var provider = new firebase.auth.GoogleAuthProvider();
 firebase.auth()
-  .signInWithPopup(provider)
-  .then((result) => {
+  .signInWithRedirect(provider);
+  firebase.auth()
+  .getRedirectResult().then((result) => {
     /** @type {firebase.auth.OAuthCredential} */
     var credential = result.credential;
 
