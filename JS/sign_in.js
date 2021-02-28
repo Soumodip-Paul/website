@@ -48,8 +48,8 @@ require("firebase/firestore");
     const entryUser = {
     UserName: user.displayNmae,
     uid: user.uid,
-    email = user.email,
-    photoUrl = user.photoURL
+    email: user.email,
+    photoUrl: user.photoURL
   };
 
   collectionReferrance.doc(user.uid).set(entryUser).then(() => {
