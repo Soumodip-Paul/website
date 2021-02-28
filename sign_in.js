@@ -13,6 +13,18 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 
+  function onSignInButtonClick() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        signOut();
+      } else {
+        // No user is signed in.
+        googleSignIn();
+      }
+    });
+  }
+
   googleSignIn=() =>{
       
     var provider = new firebase.auth.GoogleAuthProvider();
@@ -42,3 +54,12 @@ firebase.auth()
   });
   
   };
+
+  function signOut() {
+    firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+      document.getElementById("auth").innerHTML = "Sign In";
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
