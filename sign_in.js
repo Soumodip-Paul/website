@@ -16,7 +16,7 @@
   function onSignInButtonClick() {
     var user = firebase.auth().currentUser;
 
-    if (user) {
+    if (user != null) {
       // User is signed in.
       signOut();
     } else {
