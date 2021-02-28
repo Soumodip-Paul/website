@@ -14,23 +14,32 @@
   firebase.analytics();
 
   function onSignInButtonClick() {
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        document.getElementById("auth").innerHTML = user.displayName;
-        // User is signed in.
-        signOut();
-      } else {
-        // No user is signed in.
-        googleSignIn();
-      }
-    });
+    var user = firebase.auth().currentUser;
+
+    if (user) {
+      // User is signed in.
+      signOut();
+    } else {
+      // No user is signed in.
+      googleSignIn();
+    }
   }
 
-  googleSignIn=() =>{
+  function googleSignIn() {
       
     var provider = new firebase.auth.GoogleAuthProvider();
 firebase.auth()
-  .signInWithRedirect(provider);
+  .signInWithRedirect(provider);  
+  };
+
+  function signOut() {
+    firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+      document.getElementById("auth").innerHTML = "Sign In";
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
   firebase.auth()
   .getRedirectResult().then((result) => {
     /** @type {firebase.auth.OAuthCredential} */
@@ -41,7 +50,7 @@ firebase.auth()
     // The signed-in user info.
     var user = result.user;
     // ...
-    
+    document.getElementById("auth").innerHTML = user.displayName;
     
   }).catch((error) => {
     // Handle Errors here.
@@ -54,14 +63,3 @@ firebase.auth()
     // ...
     console.error(error);
   });
-  
-  };
-
-  function signOut() {
-    firebase.auth().signOut().then(() => {
-      // Sign-out successful.
-      document.getElementById("auth").innerHTML = "Sign In";
-    }).catch((error) => {
-      // An error happened.
-    });
-  }
