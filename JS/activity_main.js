@@ -1,5 +1,4 @@
-import  "sign_in.js";
-  var user = firebase.auth().currentUser;
+import { user } from "sign_in.js";
   if (user == null) {
       window.location.replace("./");
   }
