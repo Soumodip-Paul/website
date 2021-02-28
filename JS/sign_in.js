@@ -12,13 +12,9 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-  const firebase = require("firebase");
-// Required for side-effects
-require("firebase/firestore");
+ 
   var user = firebase.auth().currentUser;
   function onSignInButtonClick() {
-    
-
     if (user != null) {
       // User is signed in.
       signOut();
@@ -46,7 +42,7 @@ require("firebase/firestore");
     var db = firebase.firestore();
     var collectionReferrance = db.collection("users");
     const entryUser = {
-    UserName: user.displayNmae,
+    UserName: user.displayName,
     uid: user.uid,
     email: user.email,
     photoUrl: user.photoURL
