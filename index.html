@@ -28,7 +28,7 @@
     <li><a href="#">Practice Set</a></li>
     <li><a href="#">Slides</a></li>
     <li><a href="#">Recordings</a></li>
-    <button onclick="googleSignIn()" style="float: right;">Lorem, ipsum.</button>
+    <button id="auth" onclick="googleSignIn()" style="float: right;">Lorem, ipsum.</button>
     </ul>
 </aside>
 <section class="main_content">
@@ -81,7 +81,8 @@ firebase.auth()
     // The signed-in user info.
     var user = result.user;
     // ...
-    window.location.assign('./profile');
+    document.getElementById("auth").innerHTML = user.displayName;
+    
   }).catch((error) => {
     // Handle Errors here.
     var errorCode = error.code;
