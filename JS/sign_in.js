@@ -5,6 +5,22 @@
     return getCurrentUser();
   }
 
+ 
+  function onSignInButtonClick() {
+    var user = firebase.auth().currentUser;
+    if (user != null) {
+      // User is signed in.
+      signOut();
+      user = getCurrentUser();
+      console.log(user);
+    } else {
+      // No user is signed in.
+      googleSignIn();
+      user = getCurrentUser();
+      console.log(user);
+      
+    }   
+  }
   // find auth button 
   const auth = document.getElementById("auth");
   if(auth != null){
