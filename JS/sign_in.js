@@ -23,5 +23,9 @@
   if(auth != null){
     auth.addEventListener("click",onSignInButtonClick);
   }
-  export  {getUser};
 
+const deauth = document.getElementById("deauth");
+  if(deauth != null){
+    auth.addEventListener("click",signOut);
+    window.location.replace("./")
+  }

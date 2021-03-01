@@ -24,7 +24,6 @@ nav a {
     margin: 0px;
     width: 25%;
     border: 1px solid green;
-    border-radius: 5px;
     color: #fff;
     text-decoration: none;
     padding: 5px;
@@ -129,7 +128,7 @@ section iframe{
     }
 }
 .liveButton {
-    padding: 15px 25px;
+    padding: 0.5% 0.5%;
     font-size: 24px;
     text-align: center;
     cursor: pointer;
@@ -147,4 +146,38 @@ section iframe{
     background-color: #3e8e41;
     box-shadow: 0 5px #000;
     transform: translateY(4px);
+  }
+  .sign_in {
+       background-color: rgb(0, 217, 255);
+       border: 0px solid black;
+       color: white;
+       box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+       border-radius: 10px;
+       padding: 1%;
+       width: 50%;
+       font-size: 150%;
+       align-content: center;
+       font-weight: bolder;
+       position:  absolute;
+       left: 23%;
+       bottom: 0%;
+       margin: 2%;
+  }
+  .sign_in:hover {
+       background-color: lightgreen;
+       box-shadow: 2px 2px rgba(0, 128, 0, 0.459);
+  }
+  .fab {
+    background-color: white;
+    border: none;
+    padding: 2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1% 0.5%;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 0px;left: 0px;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
   }

@@ -1,8 +1,16 @@
-import {getUser} from "./sign_in.js";
-
-  if (getUser() == null) {
-      // window.location.replace("./");
-  }
-  else {
-    document.getElementById("go").innerHTML=getUser().displayName;
-  }
+  window.onload = function() {
+    try {
+      var url_string = (window.location.href).toLowerCase();
+      var url = new URL(url_string);
+      var uid = url.searchParams.get("uid");
+      var redirect = url.searchParams.get("redirect");
+      var post = url.searchParams.get("post");
+      if (redirect != 1) {
+        window.location.replace("./");
+      }
+      document.getElementById("logout").href = "logout.html?uid="+uid;
+      console.log(redirect+ " and "+uid+ " and "+post);
+    } catch (err) {
+      console.log("Issues with Parsing URL Parameter's - " + err);
+    }
+}
