@@ -62,6 +62,7 @@
     firebase.auth().signOut().then(() => {
       // Sign-out successful.
       document.getElementById("auth").innerHTML = "Sign In";
+      window.location.replace("./")
     }).catch((error) => {
       // An error happened.
     });

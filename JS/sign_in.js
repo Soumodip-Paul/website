@@ -30,5 +30,5 @@
 const deauth = document.getElementById("deauth");
   if(deauth != null){
     deauth.addEventListener("click",signOut);
-    window.location.replace("./")
+    
   }
