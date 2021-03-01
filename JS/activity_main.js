@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   window.onload = function() {
     try {
       var url_string = (window.location.href).toLowerCase();
@@ -14,3 +15,14 @@
       console.log("Issues with Parsing URL Parameter's - " + err);
     }
 }
+=======
+import { user } from "sign_in.js";
+import { firebaseConfig } from "sign_in.js";
+
+  if (user == null) {
+      window.location.replace("./");
+  }
+  else {
+    document.getElementById("go").innerHTML=user.displayName;
+  }
+>>>>>>> b1d7c0c5d015ac1ca3a8801992df287214e39237
