@@ -13,8 +13,9 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
  
-  var user = firebase.auth().currentUser;
+  
   function onSignInButtonClick() {
+    var user = firebase.auth().currentUser;
     if (user != null) {
       // User is signed in.
       signOut();
