@@ -1,9 +1,8 @@
-import {user} from "./sign_in.js";
-  if (user == null) {
-      window.location.replace("./");
+import {getUser} from "./sign_in.js";
+
+  if (getUser() == null) {
+      // window.location.replace("./");
   }
   else {
-    document.getElementById("go").innerHTML=user.displayName;
+    document.getElementById("go").innerHTML=getUser().displayName;
   }
-  
-  console.log(user);
