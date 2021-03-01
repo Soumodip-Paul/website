@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
  import { googleSignIn, signOut , getCurrentUser} from "./firebase.js";
   
   function getUser(){
     return getCurrentUser();
   }
-=======
+
  // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
@@ -21,7 +21,6 @@
   firebase.analytics();
  
   
->>>>>>> b1d7c0c5d015ac1ca3a8801992df287214e39237
   function onSignInButtonClick() {
     var user = firebase.auth().currentUser;
     if (user != null) {
