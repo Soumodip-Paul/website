@@ -13,5 +13,11 @@
     } catch (err) {
       console.log("Issues with Parsing URL Parameter's - " + err);
     }
+    var db = firebase.firestore();
+    db.collection("posts").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+          console.log(`${doc.id} => ${doc.data().text}`);
+      });
+  });
 }
 

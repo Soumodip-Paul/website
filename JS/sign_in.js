@@ -4,7 +4,7 @@
   function getUser(){
     return getCurrentUser();
   }
-
+  
  
   function onSignInButtonClick() {
     var user = firebase.auth().currentUser;
