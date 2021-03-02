@@ -61,10 +61,14 @@
   function signOut() {
     firebase.auth().signOut().then(() => {
       // Sign-out successful.
-      document.getElementById("auth").innerHTML = "Sign In";
-      window.location.replace("./")
+      var auth = document.getElementById("auth");
+      if (auth!=null) {
+        auth.innerHTML = "Sign In";
+      }
+      window.location.replace("./");
     }).catch((error) => {
       // An error happened.
+      console.error(error);
     });
   }
   

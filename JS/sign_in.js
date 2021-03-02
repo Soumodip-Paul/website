@@ -30,5 +30,6 @@
 const deauth = document.getElementById("deauth");
   if(deauth != null){
     deauth.addEventListener("click",signOut);
-    
   }
+var indexPage = window.location.pathname;
+console.log(indexPage);
