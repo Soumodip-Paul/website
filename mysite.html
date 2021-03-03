@@ -5,16 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soumodip Paul</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
-    <script>
-        function changeTab(event) {
-            var d = document.getElementsByClassName("active");
-            d[0].className = "nav";
-            this.className = "nav active";
-        }
-    </script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="JS/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header><h1>SOUMODIP PAUL</h1></header>
@@ -24,6 +16,7 @@
         <a href="#" class="nav">Chats</a>
         <a href="logout.html" class="nav" id="logout">Log Out</a>
     </nav>
+    <iframe id="post_window" src="show_post.html" frameborder="0"></iframe>
 <!-- <aside class="book_list">
     <ul>
     <li><a href="#go">Books</a></li>
