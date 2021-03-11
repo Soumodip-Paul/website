@@ -8,16 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sp Social App</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <script src="./JS/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header><h1>SP SOCIAL APP</h1></header>
-    <div style=" width: 100%;">
+    <div style=" width: 100%;" id="container">
         <fieldset class="email_pass_login">
             <legend>Log In</legend>
-            <fieldset class="design"><legend>Username</legend><input type="email" name="email" id="login_email" /></fieldset>
-            <fieldset class="design"><legend>Password</legend><input type="password" name="password" id="password"/><br></fieldset>
+            <fieldset class="design" id="email"><legend>Username</legend><input type="email" name="email" id="login_email" /></fieldset>
+            <fieldset class="design" id="pword"><legend>Password</legend><input type="password" name="password" id="password"/><br></fieldset>
             <button id="login" class="sign_in">Log In</button>
         </fieldset>    
         <button id="auth" class="sign_in"> Sign In</button>
