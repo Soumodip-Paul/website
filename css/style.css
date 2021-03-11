@@ -159,10 +159,12 @@ section iframe{
        font-size: 150%;
        align-content: center;
        font-weight: bolder;
-       position:  absolute;
+       /* position:  absolute;
+       bottom: 0%; */
+       position: relative;
        left: 23%;
-       bottom: 0%;
        margin: 2%;
+       outline: none;
   }
   .sign_in:hover {
        background-color: lightgreen;
@@ -185,4 +187,28 @@ section iframe{
     position: fixed;
     bottom: 0px;left: 0px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+  }
+  .email_pass_login{
+    width: 50%;
+    position: relative;
+    left: 25%;
+    padding: 2%;
+    margin: 0%;
+    border: 1px solid rgb(0, 217, 255);
+    border-radius: 12px;
+  }
+  fieldset.design input {
+   width: 100%;
+   font-size: 18px;
+   outline: none;
+   border: none;
+  }
+  fieldset.design {
+    border: 1px solid rgb(0, 217, 255);
+    border-radius: 6px;
+  }
+
+  fieldset legend {
+    color: rgb(0, 184, 216);
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
