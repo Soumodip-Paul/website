@@ -138,16 +138,16 @@ section iframe{
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #000;
-  }
+}
   
-  .liveButton:hover {background-color: #3e8e41}
+.liveButton:hover {background-color: #3e8e41}
   
-  .liveButton:active {
+.liveButton:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #000;
     transform: translateY(4px);
-  }
-  .sign_in {
+}
+.sign_in {
        background-color: rgb(0, 217, 255);
        border: none;
        color: white;
@@ -165,16 +165,16 @@ section iframe{
        left: 23%;
        margin: 2%;
        outline: none;
-  }
-  .sign_in:hover {
+}
+.sign_in:hover {
        background-color: lightgreen;
        box-shadow: 2px 2px rgba(0, 128, 0, 0.459);
-  }
-  .sign_in:active {
+}
+.sign_in:active {
     background-color: #3e8e41;
     transform: translateY(1px);
-  }
-  .fab {
+}
+.fab {
     background-color: white;
     border: none;
     padding: 2%;
@@ -187,28 +187,27 @@ section iframe{
     position: fixed;
     bottom: 0px;left: 0px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-  }
-  .email_pass_login{
+}
+.email_pass_login{
     width: 50%;
     position: relative;
     left: 25%;
     padding: 2%;
     margin: 0%;
-    border: 1px solid rgb(0, 217, 255);
+    border: 1px solid #4CAF50;
     border-radius: 12px;
-  }
-  fieldset.design input {
+}
+fieldset.design input {
    width: 100%;
    font-size: 18px;
    outline: none;
    border: none;
-  }
-  fieldset.design {
+}
+fieldset.design {
     border: 1px solid rgb(0, 217, 255);
     border-radius: 6px;
-  }
-
-  fieldset legend {
+}
+fieldset legend {
     color: rgb(0, 184, 216);
     font-family: Georgia, 'Times New Roman', Times, serif;
-  }
+}

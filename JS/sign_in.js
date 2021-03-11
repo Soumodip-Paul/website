@@ -26,8 +26,8 @@
   if(auth != null){
     auth.addEventListener("click",onSignInButtonClick);
   }
-
-const deauth = document.getElementById("deauth");
+  // find deauth button 
+  const deauth = document.getElementById("deauth");
   if(deauth != null){
     deauth.addEventListener("click",signOut);
   }
