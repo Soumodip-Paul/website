@@ -1,0 +1,16 @@
+#frame::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  #frame {
+    height: 80%;
+    width: 60%;
+    border: none;
+    position: fixed;
+    top: 15%;
+    left:20%;
+    overflow: scroll; 
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
