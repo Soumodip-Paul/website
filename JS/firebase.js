@@ -95,7 +95,8 @@ uiShown: function() {
     privacyPolicyUrl: '<your-privacy-policy-url>'
   };
   // The start method will wait until the DOM is loaded.
-  if(document.getElementById("firebaseui-auth-container")!=null){ui.start('#firebaseui-auth-container', uiConfig);}
+  $(function() {if(document.getElementById("firebaseui-auth-container")!=null){ui.start('#firebaseui-auth-container', uiConfig);}});
+  //if(document.getElementById("firebaseui-auth-container")!=null){ui.start('#firebaseui-auth-container', uiConfig);}
    export { googleSignIn, signOut , getCurrentUser , ui};
 
    function login(email,password) {
