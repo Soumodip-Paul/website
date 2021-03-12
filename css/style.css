@@ -211,3 +211,13 @@ fieldset legend {
     color: rgb(0, 184, 216);
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+#op{
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+}
+#op a{
+    align-content: center;
+    width: 100%;
+    text-align: center;
+}

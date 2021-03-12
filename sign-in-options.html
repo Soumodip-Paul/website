@@ -26,7 +26,12 @@
     <hr style="width: 50%;"/>
     <div style="position: relative; left: 48%; width: 2%;"><b><i>Or</i></b></div>
     <hr style="width: 50%;"/>
-    <button class="sign_in" onclick="window.location.replace('./sign-in-options.html');">Go to Other</button>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+
+<div id="firebaseui-auth-container"></div>
+<div id="loader">Loading...</div>
+   
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
