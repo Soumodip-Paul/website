@@ -1,5 +1,6 @@
 // This web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+var redirectCount =0;
 var firebaseConfig = {
   apiKey: "AIzaSyAPlG2Zqw3-qLXstp5exVu1Y3-lGfQloI8",
   authDomain: "spsocialapp.firebaseapp.com",
@@ -19,6 +20,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
   var provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth()
   .signInWithPopup(provider).then((result) => {
+    redirectCount=1;
     /** @type {firebase.auth.OAuthCredential} */
     var credential = result.credential;
     // This gives you a Google Access Token. You can use it to access the Google API.
@@ -27,26 +29,9 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
     var user = result.user;
     // ...
     document.getElementById("auth").innerHTML = user.displayName;
-      
-    var db = firebase.firestore();
-    var collectionReferrance = db.collection("users");
-    const entryUser = {
-    UserName: user.displayName,
-    uid: user.uid,
-    email: user.email,
-    photoUrl: user.photoURL
-  };
-
-  collectionReferrance.doc(user.uid).set(entryUser).then(() => {
-    console.log("Document successfully written!");
-    window.location.replace("./mysite.html?uid="+user.uid+"&redirect=1");
-})
-.catch((error) => {
-    console.error("Error writing document: ", error);
-});
-  
-      
+    authPassword(result);
   }).catch((error) => {
+    redirectCount=0;
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -82,27 +67,18 @@ var uiConfig = {
   // User successfully signed in.
   // Return type determines whether we continue the redirect automatically
   // or whether we leave that to developer to handle.
-    console.log(authResult)
-    $('#email').empty();
-    $('#email').append("<legend>Password</legend><input type=\"password\" name=\"password\" id=\"password\" />");
-    $('#pword').empty();
-    $('#pword').append("<legend>Confirm Password</legend><input type=\"password\" name=\"confirm password\" id=\"confirm-password\"/>");
-    $('#login').text("Save Password")
-    $('#login').click(function () {
-    if ($("#password").val()==$("#confirm-password").val()) {
-        takePassword(authResult,$('#password').val());
-        }
-    });
-        return false;
-      },
-      uiShown: function() {
-        // The widget is rendered.
-        // Hide the loader.
-        document.getElementById('loader').style.display = 'none';
-      }
-    },
+  redirectCount =1;
+  authPassword(authResult);
+  return false;
+},
+uiShown: function() {
+// The widget is rendered.
+// Hide the loader.
+  document.getElementById('loader').style.display = 'none';
+  }
+},
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-    signInFlow: 'popup',
+    signInFlow: 'redirect',
     signInSuccessUrl: '<url-to-redirect-to-on-success>',
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
@@ -156,16 +132,32 @@ user1.updatePassword(newPassword).then(function() {
   console.log("success");
   collectionReferrance.doc(user.uid).set(entryUser).then(() => {
   console.log("Document successfully written!");
+  redirectCount=0;
   window.location.replace("./mysite.html?uid="+user.uid+"&redirect=1");
 })
 .catch((error) => {
   console.error("Error writing document: ", error);
+  redirectCount=0;
 });
 }).catch(function(error) {
   // An error happened.
+  redirectCount=0;
 });
 
 }
-if(firebase.auth().currentUser==null){$("#login").click(function () {
-  login($('#login_email').val(),$('#password').val());
-});}
+$("#login").click(function () {if(firebase.auth().currentUser==null){
+  login($('#login_email').val(),$('#password').val());}
+});
+function authPassword(authResult) {
+  console.log(authResult)
+    $('#email').empty();
+    $('#email').append("<legend>Password</legend><input type=\"password\" name=\"password\" id=\"password\" />");
+    $('#pword').empty();
+    $('#pword').append("<legend>Confirm Password</legend><input type=\"password\" name=\"confirm password\" id=\"confirm-password\"/>");
+    $('#login').text("Save Password")
+    $('#login').click(function () {
+    if ($("#password").val()==$("#confirm-password").val()) {
+        takePassword(authResult,$('#password').val());
+        }
+    });
+}
