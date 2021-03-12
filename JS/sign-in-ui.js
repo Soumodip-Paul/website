@@ -95,3 +95,6 @@ var uiConfig = {
             }
         });
     }  
+    $("#login").click(function () {if(firebase.auth().currentUser==null){
+      login($('#login_email').val(),$('#password').val());}
+    });

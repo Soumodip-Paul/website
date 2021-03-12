@@ -72,6 +72,12 @@ export { googleSignIn, signOut , getCurrentUser };
       console.log(errorCode,errorMessage);
     });
    }
-$("#login").click(function () {if(firebase.auth().currentUser==null){
-  login($('#login_email').val(),$('#password').val());}
-});
+var e1 = document.getElementById("login");
+if (e1!=null) {
+  
+  e1.addEventListener('click',function(){
+  console.log("called")
+  var email = document.getElementById("login_email").value;
+  var pass  = document.getElementById("password").value;
+  login(email,pass)});
+}
