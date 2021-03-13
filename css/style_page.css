@@ -1,16 +1,59 @@
 #frame::-webkit-scrollbar {
     display: none;
-  }
+}
   
-  /* Hide scrollbar for IE, Edge and Firefox */
-  #frame {
-    height: 80%;
-    width: 60%;
-    border: none;
-    position: fixed;
-    top: 15%;
-    left:20%;
-    overflow: scroll; 
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
+/* Hide scrollbar for IE, Edge and Firefox */
+#frame {
+  height: 80%;
+  width: 60%;
+  border: none;
+  position: fixed;
+  top: 15%;
+  left:20%;
+  overflow: scroll; 
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.card {
+  border: 1px solid lightskyblue;
+  border-radius: 12px;
+  padding: 0px;
+  margin: 5px;
+  background: #f2f2f2;  
+  width: 100%;
+}
+.card .statusbar {
+  margin: 0px;
+  padding: 5px;
+  width: 100%;
+  background-color: #f2f2aa;
+  border-radius: 12px;
+}
+.card .statusbar .statusbar {
+  margin: 5px;
+  padding: 5px;
+  width: 5%;
+}
+.card .name{
+  margin: 10px 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  
+}
+.card .name .postuser{
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  vertical-align: 8px;
+}
+.card .name img{
+  margin: 0px 10px;
+  border: none;
+  border-radius: 50%;
+}
+.card .post{
+  padding: 10px;
+}
+* {
+  box-sizing:border-box;
+}

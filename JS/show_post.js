@@ -12,6 +12,8 @@ $(function(){
   });
 });
 function writeList(name_val,id_val) {
-    return `${name_val}:  <i> ${id_val} </i><br/><br/> `;
-  }
-  
+  return `${name_val}:  <i> ${id_val} </i><br/><br/> `;
+}
+function  createCard(docData){
+  return ``;
+}
