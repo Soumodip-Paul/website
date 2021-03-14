@@ -17,22 +17,19 @@
 .card {
   border: 1px solid lightskyblue;
   border-radius: 12px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   padding: 0px;
   margin: 5px;
   background: #f2f2f2;  
-  width: 100%;
+  width: 95%;
 }
 .card .statusbar {
   margin: 0px;
   padding: 5px;
   width: 100%;
   background-color: #f2f2aa;
-  border-radius: 12px;
-}
-.card .statusbar .statusbar {
-  margin: 5px;
-  padding: 5px;
-  width: 5%;
+  border-radius: 0px;
 }
 .card .name{
   margin: 10px 10px;
