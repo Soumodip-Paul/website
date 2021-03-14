@@ -54,3 +54,16 @@
 * {
   box-sizing:border-box;
 }
+.postcreate{
+  width: 100%;
+  background-color: cornsilk;
+  padding: 1%;
+  margin: 0px;
+  position: fixed;
+  left: 0px;
+  bottom: 38px;
+}
+.postcreate img{
+  border: none;
+  border-radius: 50%;
+}

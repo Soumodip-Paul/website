@@ -47,6 +47,10 @@ function signOut() {
     if (auth!=null) {
     auth.innerHTML = "Sign In";
     }
+    if (typeof(Storage)!=="undefined") {
+      localStorage.removeItem("email");
+      localStorage.removeItem("password");
+    }
     window.location.replace("./");
   }).catch((error) => {
     // An error happened.
@@ -64,6 +68,7 @@ export { googleSignIn, signOut , getCurrentUser };
     .then((userCredential) => {
       // Signed in
       var user = userCredential.user;
+      saveCredentials(email,password)
       window.location.replace(`./mysite.html?uid=${user.uid}&redirect=1`);
     })
     .catch((error) => {
@@ -81,3 +86,33 @@ if (e1!=null) {
   var pass  = document.getElementById("password").value;
   login(email,pass)});
 }
+function saveCredentials(email,password) {
+  if (typeof(Storage)!=="undefined") {
+    localStorage.setItem("email",email);
+    localStorage.setItem("password",password);
+  }
+}
+function autoLogin(email,password) {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+      window.location.replace(`./mysite.html?uid=${user.uid}&redirect=1`);
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode,errorMessage);
+    });
+}
+window.onload = function(){
+if (typeof(Storage)!=="undefined") {
+  var login_email = localStorage.getItem("email");
+  var login_pass = localStorage.getItem("password");
+  var pathname = (window.location.pathname=='/');
+  console.log(login_email,login_pass,pathname);
+  if (login_email&&login_pass&&pathname) {
+    autoLogin(login_email,login_pass);
+  }
+}
+};

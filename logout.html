@@ -30,7 +30,7 @@ function goback(){
       var url = new URL(url_string);
       var uid = url.searchParams.get("uid");
       console.log(uid);
-      window.location.replace("./mysite.html?redirect=1&uid="+uid);
+      window.location.replace("./mysite.html");
     } catch (err) {
       console.log("Issues with Parsing URL Parameter's - " + err);
     }

@@ -24,3 +24,12 @@ function  createCard(docData){
   <p class="post">${docData.text}</p>
   <div class="statusbar"></div></div>`;
 }
+$(function(){ 
+$("div.fab").click(
+  function(){var image = firebase.auth().currentUser.photoURL;
+      $("div.fab").replaceWith(`<div class="postcreate">
+      <img src="${image}" alt="user image" height="33em" width="33em"/>
+      </div>`);
+  }
+);
+});

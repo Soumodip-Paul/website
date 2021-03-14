@@ -5,11 +5,19 @@
       var uid = url.searchParams.get("uid");
       var redirect = url.searchParams.get("redirect");
       var post = url.searchParams.get("post");
-      if (redirect != 1) {
-        window.location.replace("./");
-      }
-      $("#logout").href = "logout.html?uid="+uid;
+      $("#logout").href = "logout.html";
       console.log(redirect+ " and "+uid+ " and "+post);
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          // ...
+          console.log(user);
+        } else {
+          // User is signed out.
+          // ...
+          window.location.replace("./");
+        }
+      });
     } catch (err) {
       console.log("Issues with Parsing URL Parameter's - " + err);
     }
