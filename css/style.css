@@ -32,7 +32,7 @@ nav a {
     background: yellowgreen;
 }
 nav a:hover , nav a.active {
-    cursor: context-menu;
+    cursor: pointer;
     background: #cc5;
     color : green;
 }

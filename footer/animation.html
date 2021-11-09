@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes float {
+            0%{
+                width: 50px;
+                height: 50px;
+                background-color: black;
+            }
+            50%{
+                width: 100px;
+                height: 100px;
+                background-color: whitesmoke;
+            }
+            100%{
+                width: 50px;
+                height: 50px;
+                background-color: black;
+            }
+        }
+        .progress{
+            width: 50px;
+            height: 50px;
+            animation: rotate 2s linear 0s infinite;
+        }
+        .circle{
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: black;
+        }
+        @keyframes slide {
+            from{width: 100%;}
+            to{width: 0px;}
+        }
+        .line{
+            animation: slide 2s ease 0s infinite alternate;
+            width: 100%;
+            text-align: center;
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="progress">
+        <div class="circle"></div>
+    </div>
+    <div class="line">hi</div>
+    <svg height="100px" width="100px"><path d="M 200 175 A 25 25 0 0 0 182.322 217.678" fill='green'/></svg>
+</body>
+</html>

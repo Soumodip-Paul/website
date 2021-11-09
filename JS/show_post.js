@@ -1,6 +1,6 @@
 $(function(){
     var db = firebase.firestore();
-    db.collection("posts").onSnapshot((querySnapshot) => {
+    db.collection("posts").orderBy("createdAt","desc").onSnapshot((querySnapshot) => {
       var list="<div id=\"post\" >";
       querySnapshot.forEach((doc) => {
           
@@ -22,7 +22,7 @@ function  createCard(docData){
   return ` <div class="card"><div class="name"><img src="${docData.createdBy.imageUri}" alt="user image" height="33em" width="33em">
   <span class="postuser"> ${docData.createdBy.UserName}</span></div>
   <p class="post">${docData.text}</p>
-  <div class="statusbar"></div></div>`;
+  <div class="statusbar"><i class='liked'>Liked By: ${docData.likedBy.length}</i><span class='comment'>Comments: ${docData.commentedBy.length}</span></div></div>`;
 }
 $(function(){ 
 $("div.fab").click(
